@@ -48,7 +48,11 @@ async def login_user( login_user: LoginUser, db: AsyncIOMotorDatabase = Depends(
     access_token = create_access_token(data={'user_id': str(existing_user['_id'])})
     return   { "access_token": access_token, "token_type": "bearer" }
 
+
+
 @router.get('/profile')
 async def get_user_profile(db: AsyncIOMotorDatabase = Depends(get_db), user_id:str =Depends(get_current_user) ):
     return user_id
     
+
+ 

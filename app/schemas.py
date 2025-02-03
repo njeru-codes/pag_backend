@@ -11,3 +11,8 @@ class NewUser(BaseModel):
 class LoginUser(BaseModel):
     email: EmailStr
     password: str
+
+class NewNotification(BaseModel):
+    author: EmailStr
+    message: str
+    

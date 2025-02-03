@@ -1,15 +1,14 @@
 from fastapi import FastAPI
-from app.routes import users
+from app.routes import users, notify
 from fastapi.middleware.cors import CORSMiddleware
 import uvicorn
 
 app = FastAPI()
 
 app.include_router( users.router)
+app.include_router(notify.router)
 
 origins = [
-    "https://heroku.app.com",   #TODO insert frontend domains
-    "http://localhost:3000",
     "*"
 ]  
 
